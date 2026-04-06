@@ -13,11 +13,12 @@ scoop install custom/<app-name>
 
 | Package                                          | Description                                       |
 |--------------------------------------------------|---------------------------------------------------|
-| [b2-cli](bucket/b2-cli.json)                     | Backblaze B2 Command Line Tool                    |
-| [language-indicator](bucket/language-indicator.json) | Visual keyboard layout indicator near text cursor |
-| [lightroom-plugins](bucket/lightroom-plugins.json)   | Lightroom plugins: jb_videometadata + copy-to-clipboard |
-| [mremoteng](bucket/mremoteng.json)               | Multi-Remote Next Generation connection manager   |
-| [throttlestop](bucket/throttlestop.json)         | CPU throttling and undervolting tool               |
+| [b2-cli](bucket/b2-cli.json)                                   | Backblaze B2 Command Line Tool                                  |
+| [jb-videometadata-lrplugin](bucket/jb-videometadata-lrplugin.json) | Lightroom plugin for writing IPTC metadata into video files |
+| [language-indicator](bucket/language-indicator.json)            | Visual keyboard layout indicator near text cursor               |
+| [lr-copy-to-clipboard](bucket/lr-copy-to-clipboard.json)       | Lightroom export plugin that copies photos to clipboard         |
+| [mremoteng](bucket/mremoteng.json)                             | Multi-Remote Next Generation connection manager                 |
+| [throttlestop](bucket/throttlestop.json)                       | CPU throttling and undervolting tool                             |
 
 ## Updating
 

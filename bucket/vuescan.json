@@ -1,0 +1,16 @@
+{
+    "version": "9.8.45",
+    "description": "Scanner software with advanced features",
+    "homepage": "https://www.hamrick.com/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.hamrick.com/vuescan/license.html"
+    },
+    "url": "https://www.hamrick.com/files/vuex6498.exe",
+    "bin": "vuescan.exe",
+    "notes": "VueScan requires a license key for full functionality.",
+    "checkver": {
+        "url": "https://www.hamrick.com/vuescan/vuescan.htm",
+        "regex": "VueScan ([\\d.]+)"
+    }
+}

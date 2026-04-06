@@ -1,0 +1,22 @@
+{
+    "version": "9.6",
+    "description": "CPU throttling and undervolting tool",
+    "homepage": "https://throttlestop.net/",
+    "license": "Freeware",
+    "url": "https://throttlestop.b-cdn.net/ThrottleStop_$version.zip",
+    "hash": "d5cc57e9e7cfaca270ceddd4db69d895398a5e4cae73dc0160cc271fca8f4ecc",
+    "bin": "ThrottleStop.exe",
+    "shortcuts": [
+        [
+            "ThrottleStop.exe",
+            "ThrottleStop"
+        ]
+    ],
+    "checkver": {
+        "url": "https://throttlestop.net/",
+        "regex": "ThrottleStop_([\\d.]+)\\.zip"
+    },
+    "autoupdate": {
+        "url": "https://throttlestop.b-cdn.net/ThrottleStop_$version.zip"
+    }
+}

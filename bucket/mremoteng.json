@@ -3,7 +3,7 @@
     "description": "Multi-Remote Next Generation connection manager",
     "homepage": "https://mremoteng.org/",
     "license": "GPL-2.0",
-    "url": "https://github.com/mRemoteNG/mRemoteNG/releases/download/20260222-v$version-NB-%283405%29/mRemoteNG-20260222-v$version-NB-3405-x64-SC.rar",
+    "url": "https://github.com/mRemoteNG/mRemoteNG/releases/download/20260222-v1.78.2-NB-%283405%29/mRemoteNG-20260222-v1.78.2-NB-3405-x64-SC.rar",
     "hash": "fd567eec4136bdbfa8f66043c43ab1f32550c3d23e47f3d63da22119151af828",
     "bin": "mRemoteNG.exe",
     "shortcuts": [

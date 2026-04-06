@@ -19,6 +19,7 @@ scoop install custom/<app-name>
 | [lr-copy-to-clipboard](bucket/lr-copy-to-clipboard.json)       | Lightroom export plugin that copies photos to clipboard         |
 | [mremoteng](bucket/mremoteng.json)                             | Multi-Remote Next Generation connection manager                 |
 | [throttlestop](bucket/throttlestop.json)                       | CPU throttling and undervolting tool                             |
+| [vuescan](bucket/vuescan.json)                                 | Scanner software with advanced features (portable)              |
 
 ## Updating
 

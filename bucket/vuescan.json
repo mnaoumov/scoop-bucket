@@ -1,0 +1,19 @@
+{
+    "version": "9.8",
+    "description": "Scanner software with advanced features (portable)",
+    "homepage": "https://www.hamrick.com/",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.hamrick.com/vuescan/license.html"
+    },
+    "url": "https://github.com/mnaoumov/scoop-bucket/releases/download/vuescan-9.8/vuescan-portable.zip",
+    "hash": "14f5946c220e28db8df5c42b618927c52ffa9b3c5f654e1765f568b160759a79",
+    "extract_dir": "VueScan",
+    "bin": "App\\Vuescan\\vuescan64.exe",
+    "shortcuts": [
+        [
+            "App\\Vuescan\\vuescan64.exe",
+            "VueScan"
+        ]
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "version": "2026.1.0.36452",
+    "description": "Foxit PDF Editor Pro (portable)",
+    "homepage": "https://www.foxit.com/pdf-editor/",
+    "license": "Proprietary",
+    "url": "https://github.com/mnaoumov/scoop-bucket/releases/download/foxit-pdf-editor-2026.1.0.36452/foxit-pdf-editor-2026.1.0.36452.zip",
+    "hash": "0270a6fdc8761ad6e5d9f266672764c358875dcb78b111041eb09196968fa7d2",
+    "extract_dir": "Foxit PDF Editor\\App\\Foxit PDF Editor",
+    "bin": "FoxitPDFEditor.exe",
+    "shortcuts": [
+        [
+            "FoxitPDFEditor.exe",
+            "Foxit PDF Editor"
+        ]
+    ]
+}

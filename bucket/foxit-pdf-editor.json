@@ -1,15 +1,50 @@
 {
     "version": "2026.1.1.36485",
-    "description": "Foxit PDF Editor Pro (portable)",
+    "description": "Foxit PDF Editor Pro",
     "homepage": "https://www.foxit.com/pdf-editor/",
     "license": "Proprietary",
-    "url": "https://github.com/mnaoumov/scoop-bucket/releases/download/foxit-pdf-editor-2026.1.1.36485/foxit-pdf-editor-2026.1.1.36485.zip",
-    "hash": "f0df0028ee0a0472f6433c17924e7243cee05a398f47591d69161ccefc7c4d3b",
-    "extract_dir": "Foxit PDF Editor\\App\\Foxit PDF Editor",
-    "bin": "FoxitPDFEditor.exe",
+    "url": "https://github.com/mnaoumov/scoop-bucket/releases/download/foxit-pdf-editor-2026.1.1.36485/FoxitPDFEditor202611_L10N_Setup_Direct_x64.exe",
+    "hash": "6434297b848a595d20640a221b29b78256348a40bb5548a83df92ea34eb03f9d",
+    "installer": {
+        "script": [
+            "$extract = \"$dir\\_extract\"",
+            "if (Test-Path $extract) {",
+            "    Remove-Item -Recurse -Force $extract",
+            "}",
+            "Write-Host 'Running Foxit installer (UAC will prompt for elevation)...'",
+            "$proc = Start-Process -FilePath \"$dir\\$fname\" -ArgumentList @('/extract', \"`\"$extract`\"\") -Verb RunAs -Wait -PassThru",
+            "if ($proc.ExitCode -ne 0) {",
+            "    error \"Foxit /extract failed (exit $($proc.ExitCode)).\"",
+            "    break",
+            "}",
+            "$msi = \"$extract\\Setup.msi\"",
+            "$msp = \"$extract\\Setup.msp\"",
+            "$log = \"$dir\\fx-install.log\"",
+            "$proc = Start-Process -FilePath 'msiexec.exe' -ArgumentList @('/i', \"`\"$msi`\"\", '/quiet', '/norestart', '/l*v', \"`\"$log`\"\", \"INSTALLLOCATION=`\"$dir`\"\", \"PATCH=`\"$msp`\"\") -Verb RunAs -Wait -PassThru",
+            "if ($proc.ExitCode -ne 0) {",
+            "    error \"Foxit MSI install failed (exit $($proc.ExitCode)). Log: $(friendly_path $log)\"",
+            "    break",
+            "}",
+            "Remove-Item \"$dir\\$fname\", $log, $extract -Force -Recurse -ErrorAction SilentlyContinue"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "$uninstallKeys = @('HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*', 'HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*')",
+            "$productCode = Get-ItemProperty $uninstallKeys -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -eq 'Foxit PDF Editor' } | Select-Object -ExpandProperty PSChildName -First 1",
+            "if ($productCode) {",
+            "    Write-Host 'Uninstalling Foxit PDF Editor (UAC will prompt for elevation)...'",
+            "    $proc = Start-Process -FilePath 'msiexec.exe' -ArgumentList @('/x', $productCode, '/quiet', '/norestart') -Verb RunAs -Wait -PassThru",
+            "    if ($proc.ExitCode -ne 0) {",
+            "        warn \"Foxit MSI uninstall returned exit $($proc.ExitCode).\"",
+            "    }",
+            "}"
+        ]
+    },
+    "bin": "Foxit PDF Editor\\FoxitPDFEditor.exe",
     "shortcuts": [
         [
-            "FoxitPDFEditor.exe",
+            "Foxit PDF Editor\\FoxitPDFEditor.exe",
             "Foxit PDF Editor"
         ]
     ]

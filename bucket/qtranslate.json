@@ -1,0 +1,21 @@
+{
+    "version": "6.10.0",
+    "description": "Multi-engine desktop translation tool (QuestSoft). Translates selected text via Google/Bing/Yandex/etc., with hotkey-based popup, dictionary, and TTS.",
+    "homepage": "https://qtranslate.en.uptodown.com/windows",
+    "license": "Freeware",
+    "url": "https://www.oldergeeks.com/downloads/files/QTranslate.6.10.0.exe",
+    "hash": "d395af3c10e18c944cf8ade76a650623dc23e050eaf652ff31056c84077a013c",
+    "pre_install": [
+        "Expand-7zipArchive \"$dir\\$fname\" \"$dir\"",
+        "Remove-Item \"$dir\\$fname\" -Force",
+        "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse -Force -ErrorAction SilentlyContinue",
+        "Remove-Item \"$dir\\Uninstall.exe\" -Force -ErrorAction SilentlyContinue"
+    ],
+    "bin": "QTranslate.exe",
+    "shortcuts": [
+        [
+            "QTranslate.exe",
+            "QTranslate"
+        ]
+    ]
+}

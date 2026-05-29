@@ -3,29 +3,42 @@
     "description": "Foxit PDF Editor Pro",
     "homepage": "https://www.foxit.com/pdf-editor/",
     "license": "Proprietary",
-    "url": "https://github.com/mnaoumov/scoop-bucket/releases/download/foxit-pdf-editor-2026.1.1.36485/FoxitPDFEditor202611_L10N_Setup_Direct_x64.exe",
-    "hash": "6434297b848a595d20640a221b29b78256348a40bb5548a83df92ea34eb03f9d",
+    "url": [
+        "https://github.com/mnaoumov/scoop-bucket/releases/download/foxit-pdf-editor-2026.1.1.36485/FoxitPDFEditor202611_L10N_Setup_Direct_x64.exe",
+        "https://github.com/mnaoumov/scoop-bucket/releases/download/foxit-pdf-editor-2026.1.1.36485/foxit-pdf-editor-2026.1.1.36485-update.zip#/update.bin"
+    ],
+    "hash": [
+        "6434297b848a595d20640a221b29b78256348a40bb5548a83df92ea34eb03f9d",
+        "c0b3b9d978fa0ade3b1e44c8b7618d935310a578adaba22f27ccf00d659129f3"
+    ],
     "installer": {
         "script": [
+            "$installerExe = \"$dir\\FoxitPDFEditor202611_L10N_Setup_Direct_x64.exe\"",
+            "$updateZip = \"$dir\\update.bin\"",
             "$extract = \"$dir\\_extract\"",
+            "$target = \"$dir\\Foxit PDF Editor\"",
+            "$log = \"$dir\\fx-install.log\"",
             "if (Test-Path $extract) {",
             "    Remove-Item -Recurse -Force $extract",
             "}",
             "Write-Host 'Running Foxit installer (UAC will prompt for elevation)...'",
-            "$proc = Start-Process -FilePath \"$dir\\$fname\" -ArgumentList @('/extract', \"`\"$extract`\"\") -Verb RunAs -Wait -PassThru",
+            "$proc = Start-Process -FilePath $installerExe -ArgumentList @('/extract', \"`\"$extract`\"\") -Verb RunAs -Wait -PassThru",
             "if ($proc.ExitCode -ne 0) {",
             "    error \"Foxit /extract failed (exit $($proc.ExitCode)).\"",
             "    break",
             "}",
             "$msi = \"$extract\\Setup.msi\"",
             "$msp = \"$extract\\Setup.msp\"",
-            "$log = \"$dir\\fx-install.log\"",
             "$proc = Start-Process -FilePath 'msiexec.exe' -ArgumentList @('/i', \"`\"$msi`\"\", '/quiet', '/norestart', '/l*v', \"`\"$log`\"\", \"INSTALLLOCATION=`\"$dir`\"\", \"PATCH=`\"$msp`\"\") -Verb RunAs -Wait -PassThru",
             "if ($proc.ExitCode -ne 0) {",
             "    error \"Foxit MSI install failed (exit $($proc.ExitCode)). Log: $(friendly_path $log)\"",
             "    break",
             "}",
-            "Remove-Item \"$dir\\$fname\", $log, $extract -Force -Recurse -ErrorAction SilentlyContinue"
+            "Write-Host 'Applying post-install overlay from update.zip...'",
+            "$renamedZip = \"$dir\\update.zip\"",
+            "Rename-Item -LiteralPath $updateZip -NewName 'update.zip' -Force",
+            "Expand-Archive -LiteralPath $renamedZip -DestinationPath $target -Force",
+            "Remove-Item $installerExe, $renamedZip, $log, $extract -Force -Recurse -ErrorAction SilentlyContinue"
         ]
     },
     "uninstaller": {

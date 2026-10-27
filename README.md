@@ -19,6 +19,7 @@ scoop install mnaoumov/<app-name>
 | [language-indicator](bucket/language-indicator.json)             | Visual keyboard layout indicator near text cursor               |
 | [lr-copy-to-clipboard](bucket/lr-copy-to-clipboard.json)        | Lightroom export plugin that copies photos to clipboard         |
 | [mremoteng](bucket/mremoteng.json)                              | Multi-Remote Next Generation connection manager                 |
+| [qtranslate-ahatem](bucket/qtranslate-ahatem.json)              | Open-source QTranslate rewrite with bundled Java                |
 | [throttlestop](bucket/throttlestop.json)                        | CPU throttling and undervolting tool                            |
 | [vuescan](bucket/vuescan.json)                                  | Scanner software with advanced features (portable)              |
 

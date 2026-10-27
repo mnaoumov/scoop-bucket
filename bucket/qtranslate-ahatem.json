@@ -1,0 +1,48 @@
+{
+    "version": "1.5.0",
+    "description": "Extensible desktop translation, OCR, text-to-speech and dictionary suite (ahatem rewrite)",
+    "homepage": "https://github.com/ahatem/QTranslate",
+    "license": "MPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ahatem/QTranslate/releases/download/v1.5.0/QTranslate-1.5.0-windows-x64.zip",
+            "hash": "b406c6817426cdd5d58c5ddc308460c56172cf3e847a844b41cb5f3940b373bc"
+        }
+    },
+    "extract_dir": "QTranslate",
+    "bin": [
+        [
+            "QTranslate.exe",
+            "qtranslate-ahatem"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "QTranslate.exe",
+            "QTranslate (ahatem)"
+        ]
+    ],
+    "persist": [
+        "datastore",
+        "plugins_data",
+        "plugins",
+        "languages",
+        "themes",
+        "icons"
+    ],
+    "notes": [
+        "This is ahatem's open-source rewrite, separate from the Questsoft qtranslate package.",
+        "Java is bundled. Settings, history, plugin data and customizable resource folders persist across Scoop updates.",
+        "Use Scoop to update the application; the Plugins panel manages installed plugins."
+    ],
+    "checkver": {
+        "github": "https://github.com/ahatem/QTranslate"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ahatem/QTranslate/releases/download/v$version/QTranslate-$version-windows-x64.zip"
+            }
+        }
+    }
+}

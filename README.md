@@ -15,6 +15,7 @@ scoop install mnaoumov/<app-name>
 |------------------------------------------------------------------|-----------------------------------------------------------------|
 | [b2-cli](bucket/b2-cli.json)                                    | Backblaze B2 Command Line Tool                                  |
 | [foxit-pdf-editor](bucket/foxit-pdf-editor.json)                | Foxit PDF Editor Pro (portable)                                 |
+| [headless-run](bucket/headless-run.json)                      | Run console programs without a visible window, preserving exit codes |
 | [jb-videometadata-lrplugin](bucket/jb-videometadata-lrplugin.json) | Lightroom plugin for writing IPTC metadata into video files  |
 | [language-indicator](bucket/language-indicator.json)             | Visual keyboard layout indicator near text cursor               |
 | [lr-copy-to-clipboard](bucket/lr-copy-to-clipboard.json)        | Lightroom export plugin that copies photos to clipboard         |

@@ -1,0 +1,38 @@
+{
+    "version": "0.1.0",
+    "description": "Run Windows console programs without a visible window while preserving their exit codes",
+    "homepage": "https://github.com/mnaoumov/headless-run",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/mnaoumov/headless-run/releases/download/v0.1.0/headless-run-win-x64.exe#/headless-run.exe",
+            "hash": "b5f0b19d33c5e6cbe70a54196b0ced61011bdd642f55221e5007cd3a02f222a2"
+        },
+        "arm64": {
+            "url": "https://github.com/mnaoumov/headless-run/releases/download/v0.1.0/headless-run-win-arm64.exe#/headless-run.exe",
+            "hash": "312ce9838af24c198fbf0cda1f6f6a9461d7a8abf465be10aaa915e1966a088f"
+        }
+    },
+    "bin": "headless-run.exe",
+    "checkver": {
+        "github": "https://github.com/mnaoumov/headless-run"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/mnaoumov/headless-run/releases/download/v$version/headless-run-win-x64.exe#/headless-run.exe",
+                "hash": {
+                    "url": "$baseurl/headless-run-win-x64.exe.sha256",
+                    "regex": "$sha256"
+                }
+            },
+            "arm64": {
+                "url": "https://github.com/mnaoumov/headless-run/releases/download/v$version/headless-run-win-arm64.exe#/headless-run.exe",
+                "hash": {
+                    "url": "$baseurl/headless-run-win-arm64.exe.sha256",
+                    "regex": "$sha256"
+                }
+            }
+        }
+    }
+}

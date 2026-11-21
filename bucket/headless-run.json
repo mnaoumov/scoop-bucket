@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "description": "Run Windows console programs without a visible window while preserving their exit codes",
-    "homepage": "https://github.com/mnaoumov/headless-run",
+    "homepage": "https://mnaoumov.dev/headless-run/",
     "license": "MIT",
     "architecture": {
         "64bit": {

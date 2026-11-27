@@ -1,10 +1,11 @@
 {
-    "version": "1.78.2",
+    "version": "1.78.2.3782",
     "description": "Multi-Remote Next Generation connection manager",
     "homepage": "https://mremoteng.org/",
     "license": "GPL-2.0",
-    "url": "https://github.com/mRemoteNG/mRemoteNG/releases/download/20260222-v1.78.2-NB-%283405%29/mRemoteNG-20260222-v1.78.2-NB-3405-x64-SC.rar",
-    "hash": "fd567eec4136bdbfa8f66043c43ab1f32550c3d23e47f3d63da22119151af828",
+    "notes": "Tracks the mRemoteNG nightly builds (1.78.x). The stable release is in the Extras bucket as extras/mremoteng.",
+    "url": "https://github.com/mRemoteNG/mRemoteNG/releases/download/20261111-v1.78.2-NB-%283782%29/mRemoteNG-20261111-v1.78.2-NB-3782-x64-SC.zip",
+    "hash": "308c1e3bc42937e54d875fe5626b855e100f501b67ebce81a2c03f520e0872c9",
     "bin": "mRemoteNG.exe",
     "shortcuts": [
         [
@@ -14,9 +15,11 @@
     ],
     "persist": "confCons.xml",
     "checkver": {
-        "github": "https://github.com/mRemoteNG/mRemoteNG"
+        "url": "https://api.github.com/repos/mRemoteNG/mRemoteNG/releases",
+        "regex": "releases/download/(?<tag>[^/\"]+)/mRemoteNG-(?<date>\\d{8})-v(?<ver>[\\d.]+)-NB-(?<build>\\d+)-x64-SC\\.zip",
+        "replace": "${ver}.${build}"
     },
     "autoupdate": {
-        "url": "https://github.com/mRemoteNG/mRemoteNG/releases/download/$version/mRemoteNG-$version-x64-SC.rar"
+        "url": "https://github.com/mRemoteNG/mRemoteNG/releases/download/$matchTag/mRemoteNG-$matchDate-v$matchVer-NB-$matchBuild-x64-SC.zip"
     }
 }

@@ -34,5 +34,12 @@
             "    Write-Host 'No QTranslate uninstaller found in Program Files / Program Files (x86) -- nothing to remove.'",
             "}"
         ]
+    },
+    "checkver": {
+        "url": "https://qtranslate.en.uptodown.com/windows",
+        "regex": "\"softwareVersion\":\"([\\d.]+)\""
+    },
+    "autoupdate": {
+        "url": "https://www.oldergeeks.com/downloads/files/QTranslate.$version.exe"
     }
 }

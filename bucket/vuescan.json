@@ -15,5 +15,9 @@
             "App\\Vuescan\\vuescan64.exe",
             "VueScan"
         ]
-    ]
+    ],
+    "checkver": {
+        "url": "https://www.hamrick.com/alternate-versions.html",
+        "regex": "VueScan\\s+(\\d+\\.\\d+\\.\\d+)"
+    }
 }

@@ -60,5 +60,9 @@
             "Foxit PDF Editor\\FoxitPDFEditor.exe",
             "Foxit PDF Editor"
         ]
-    ]
+    ],
+    "checkver": {
+        "url": "https://www.foxit.com/pdf-editor/version-history.html",
+        "regex": "Version\\s*([\\d.]{8,})"
+    }
 }

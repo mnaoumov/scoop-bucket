@@ -15,7 +15,7 @@ scoop install mnaoumov/<app-name>
 
 | Package | Description |
 | --- | --- |
-| [foxit-pdf-editor](bucket/foxit-pdf-editor.json) | Foxit PDF Editor Pro (portable) |
+| [foxit-pdf-editor](bucket/foxit-pdf-editor.json) | Foxit PDF Editor Pro |
 | [headless-run](bucket/headless-run.json) | Run console programs without a visible window, preserving exit codes |
 | [jb-videometadata-lrplugin](bucket/jb-videometadata-lrplugin.json) | Lightroom plugin for writing IPTC metadata into video files |
 | [language-indicator](bucket/language-indicator.json) | Visual keyboard layout indicator near text cursor |
@@ -44,6 +44,13 @@ scoop update *
 ```
 
 Manifests include `checkver` and `autoupdate` fields where possible. The [Excavator workflow](.github/workflows/excavator.yml) runs them every 4 hours and commits each manifest that has a newer upstream version.
+
+Two manifests have a `checkver` but no `autoupdate`, because they install files hosted as releases of this repo rather than the upstream download:
+
+1. `foxit-pdf-editor` installs the upstream installer plus a post-install overlay, `update.zip`, that the upstream does not publish.
+2. `vuescan` installs a portable repackage of VueScan; the upstream offers only an installer.
+
+For these two, the Excavator workflow reports a newer upstream version in its log but changes nothing; a new release has to be packaged and uploaded by hand. The `vuescan` repackage carries a fourth version part (`9.8.53.02`), so `checkver` reports it as different from the upstream's three-part version even when the two match.
 
 ## Testing
 

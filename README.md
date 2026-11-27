@@ -1,5 +1,7 @@
 # mnaoumov's Scoop Bucket
 
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/mnaoumov)
+
 Personal [Scoop](https://scoop.sh/) bucket for apps not available in the official buckets.
 
 ## Usage

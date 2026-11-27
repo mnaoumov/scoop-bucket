@@ -35,6 +35,17 @@ scoop update *
 
 Manifests include `checkver` and `autoupdate` fields where possible.
 
+## See also
+
+| Project | Features | How `mnaoumov's Scoop Bucket` differs |
+| --- | --- | --- |
+| [`DEV-tools`](https://github.com/anderlli0053/DEV-tools) | Large community bucket of development tools, utilities and everyday apps; automated updates through GitHub Actions; carries `foxit-pdf-editor`, `qtranslate` and `throttlestop` | Overlaps on three apps; this bucket adds `b2-cli`, `headless-run`, `language-indicator`, the Lightroom plugins and `vuescan`, and keeps a small, hand-picked set |
+| [`Extras`](https://github.com/ScoopInstaller/Extras) | Official Scoop bucket for apps outside `Main`; scheduled automatic updates; manifest tests on every pull request; carries `mremoteng` and `throttlestop` | Overlaps on two apps, with the same upstream binaries; this bucket adds apps `Extras` does not carry, such as Foxit PDF Editor, VueScan and Language Indicator |
+| [`Extras-Plus`](https://github.com/Scoopforge/Extras-Plus) | Community supplement to `Extras`; carries `texlive` | Overlaps on `texlive`; otherwise a different set of apps |
+| [`Main`](https://github.com/ScoopInstaller/Main) | Default Scoop bucket for command-line tools; scheduled automatic updates; carries `b2`, the same Backblaze B2 command-line tool | Overlaps on the Backblaze B2 command-line tool, published here as `b2-cli`; this bucket also carries GUI apps, which `Main` does not accept |
+
+Last searched for similar projects on 2026-11-27.
+
 ## Filing an issue (for AI agents and humans)
 
 Open issues through the [issue forms](https://github.com/mnaoumov/scoop-bucket/issues/new/choose), not as blank issues.

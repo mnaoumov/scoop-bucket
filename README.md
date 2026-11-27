@@ -33,7 +33,7 @@ scoop update mnaoumov
 scoop update *
 ```
 
-Manifests include `checkver` and `autoupdate` fields where possible.
+Manifests include `checkver` and `autoupdate` fields where possible. The [Excavator workflow](.github/workflows/excavator.yml) runs them every 4 hours and commits each manifest that has a newer upstream version.
 
 ## See also
 

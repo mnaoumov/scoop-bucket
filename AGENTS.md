@@ -22,3 +22,10 @@ Filing from the CLI or the API (`gh issue create --body`, or an AI agent filing 
 ## L3. Naming
 
 - Manifest filenames: kebab-case (e.g., `b2-cli.json`, `language-indicator.json`)
+
+## L4. Automated updates
+
+- `.github/workflows/excavator.yml` runs Scoop's `checkver` and `autoupdate` every 4 hours (and on `workflow_dispatch`) through `ScoopInstaller/GithubActions`
+- It commits each updated manifest as `github-actions[bot]` and pushes straight to `main` with `GITHUB_TOKEN` (`contents: write`), so `main` moves on its own: pull before you push
+- `main` has no branch protection or ruleset; adding one that blocks direct pushes would stop these updates
+- A manifest without `autoupdate` is only reported, never changed

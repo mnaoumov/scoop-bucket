@@ -1,0 +1,29 @@
+name: Excavator
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run every 4 hours.
+    - cron: '20 */4 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: excavator
+  cancel-in-progress: false
+
+jobs:
+  excavate:
+    name: Excavate
+    runs-on: windows-2025
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Excavate
+        # Runs Scoop's checkver and autoupdate on bucket/*.json, then commits and pushes
+        # each updated manifest to the checked-out branch with GITHUB_TOKEN.
+        uses: ScoopInstaller/GithubActions@5bceeda181721d9d10a18fdcc3ddca6f33467ae6 # v3.0.0
+        env:
+          SKIP_UPDATED: 1

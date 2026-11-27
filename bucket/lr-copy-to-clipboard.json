@@ -1,10 +1,12 @@
 {
-    "version": "1.0",
+    "version": ".1.0.1",
     "description": "Lightroom export plugin that copies photos to clipboard",
     "homepage": "https://lrcopytoclipboard.com/",
     "license": "Freeware",
-    "url": "https://lrcopytoclipboard.com/lr-copy-to-clipboard.lrplugin.1.0.zip",
-    "bin": [],
+    "url": "https://lrcopytoclipboard.com/lr-copy-to-clipboard.lrplugin..1.0.1.zip",
+    "bin": [
+        
+    ],
     "installer": {
         "script": [
             "Write-Host 'Plugin installed to:' $dir",

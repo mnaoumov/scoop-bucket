@@ -1,10 +1,10 @@
 {
-    "version": "0.75",
+    "version": "0.78",
     "description": "Visual keyboard layout indicator near text cursor",
     "homepage": "https://github.com/yakunins/language-indicator",
     "license": "MIT",
-    "url": "https://github.com/yakunins/language-indicator/releases/download/v0.75/language-indicator-v0.75.zip",
-    "hash": "d33920881d6a2258123b421d3504fdfa10b5f68a022f1eef768dffa4e32dfd7c",
+    "url": "https://github.com/yakunins/language-indicator/releases/download/v0.78/language-indicator-v0.78.zip",
+    "hash": "8fa90b5bf6cba995359e8714bc0e5d43306581168f5d9c16677b95280483d642",
     "bin": "language-indicator.exe",
     "shortcuts": [
         [

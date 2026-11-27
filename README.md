@@ -2,7 +2,7 @@
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/mnaoumov)
 
-Personal [Scoop](https://scoop.sh/) bucket for apps not available in the official buckets.
+Personal [Scoop](https://scoop.sh/) bucket for apps not available in the official buckets, or not in the release channel this bucket carries.
 
 ## Usage
 
@@ -13,18 +13,28 @@ scoop install mnaoumov/<app-name>
 
 ## Available packages
 
-| Package                                                          | Description                                                     |
-|------------------------------------------------------------------|-----------------------------------------------------------------|
-| [b2-cli](bucket/b2-cli.json)                                    | Backblaze B2 Command Line Tool                                  |
-| [foxit-pdf-editor](bucket/foxit-pdf-editor.json)                | Foxit PDF Editor Pro (portable)                                 |
-| [headless-run](bucket/headless-run.json)                      | Run console programs without a visible window, preserving exit codes |
-| [jb-videometadata-lrplugin](bucket/jb-videometadata-lrplugin.json) | Lightroom plugin for writing IPTC metadata into video files  |
-| [language-indicator](bucket/language-indicator.json)             | Visual keyboard layout indicator near text cursor               |
-| [lr-copy-to-clipboard](bucket/lr-copy-to-clipboard.json)        | Lightroom export plugin that copies photos to clipboard         |
-| [mremoteng](bucket/mremoteng.json)                              | Multi-Remote Next Generation connection manager                 |
-| [qtranslate-ahatem](bucket/qtranslate-ahatem.json)              | Open-source QTranslate rewrite with bundled Java                |
-| [throttlestop](bucket/throttlestop.json)                        | CPU throttling and undervolting tool                            |
-| [vuescan](bucket/vuescan.json)                                  | Scanner software with advanced features (portable)              |
+| Package | Description |
+| --- | --- |
+| [foxit-pdf-editor](bucket/foxit-pdf-editor.json) | Foxit PDF Editor Pro (portable) |
+| [headless-run](bucket/headless-run.json) | Run console programs without a visible window, preserving exit codes |
+| [jb-videometadata-lrplugin](bucket/jb-videometadata-lrplugin.json) | Lightroom plugin for writing IPTC metadata into video files |
+| [language-indicator](bucket/language-indicator.json) | Visual keyboard layout indicator near text cursor |
+| [lr-copy-to-clipboard](bucket/lr-copy-to-clipboard.json) | Lightroom export plugin that copies photos to clipboard |
+| [mremoteng](bucket/mremoteng.json) | Multi-Remote Next Generation connection manager, nightly builds |
+| [qtranslate](bucket/qtranslate.json) | QTranslate desktop translation tool by QuestSoft |
+| [qtranslate-ahatem](bucket/qtranslate-ahatem.json) | Open-source QTranslate rewrite with bundled Java |
+| [texlive](bucket/texlive.json) | TeX Live distribution, installed portable with the small scheme |
+| [vuescan](bucket/vuescan.json) | Scanner software with advanced features (portable) |
+
+### Apps also in the official buckets
+
+| Package | Status | Why |
+| --- | --- | --- |
+| `mremoteng` | Kept | It tracks the nightly builds (1.78.x); `extras/mremoteng` tracks the stable release (1.76.x) |
+| `b2-cli` | Retired on 2026-11-27 | `main/b2` ships the same binary at the same version; install it with `scoop install main/b2` |
+| `throttlestop` | Retired on 2026-11-27 | `extras/throttlestop` is newer and downloads from the author's own host, TechPowerUp; install it with `scoop install extras/throttlestop` |
+
+To move an install of a retired app over, uninstall the `mnaoumov` copy and install the official one. Back up `ThrottleStop.ini` from the ThrottleStop app folder first, because this bucket's manifest did not persist it.
 
 ## Updating
 
@@ -57,10 +67,10 @@ The scripts call the copies in your Scoop installation, or in `$env:SCOOP_HOME` 
 
 | Project | Features | How `mnaoumov's Scoop Bucket` differs |
 | --- | --- | --- |
-| [`DEV-tools`](https://github.com/anderlli0053/DEV-tools) | Large community bucket of development tools, utilities and everyday apps; automated updates through GitHub Actions; carries `foxit-pdf-editor`, `qtranslate` and `throttlestop` | Overlaps on three apps; this bucket adds `b2-cli`, `headless-run`, `language-indicator`, the Lightroom plugins and `vuescan`, and keeps a small, hand-picked set |
-| [`Extras`](https://github.com/ScoopInstaller/Extras) | Official Scoop bucket for apps outside `Main`; scheduled automatic updates; manifest tests on every pull request; carries `mremoteng` and `throttlestop` | Overlaps on two apps, with the same upstream binaries; this bucket adds apps `Extras` does not carry, such as Foxit PDF Editor, VueScan and Language Indicator |
+| [`DEV-tools`](https://github.com/anderlli0053/DEV-tools) | Large community bucket of development tools, utilities and everyday apps; automated updates through GitHub Actions; carries `foxit-pdf-editor` and `qtranslate` | Overlaps on two apps; this bucket adds `headless-run`, `language-indicator`, the Lightroom plugins and `vuescan`, and keeps a small, hand-picked set |
+| [`Extras`](https://github.com/ScoopInstaller/Extras) | Official Scoop bucket for apps outside `Main`; scheduled automatic updates; manifest tests on every pull request; carries `mremoteng` (stable) and `throttlestop` | This bucket carries mRemoteNG's nightly channel instead, and apps `Extras` does not carry, such as Foxit PDF Editor, VueScan and Language Indicator |
 | [`Extras-Plus`](https://github.com/Scoopforge/Extras-Plus) | Community supplement to `Extras`; carries `texlive` | Overlaps on `texlive`; otherwise a different set of apps |
-| [`Main`](https://github.com/ScoopInstaller/Main) | Default Scoop bucket for command-line tools; scheduled automatic updates; carries `b2`, the same Backblaze B2 command-line tool | Overlaps on the Backblaze B2 command-line tool, published here as `b2-cli`; this bucket also carries GUI apps, which `Main` does not accept |
+| [`Main`](https://github.com/ScoopInstaller/Main) | Default Scoop bucket for command-line tools; scheduled automatic updates; carries `b2`, the Backblaze B2 command-line tool this bucket used to publish as `b2-cli` | No overlap left; this bucket carries GUI apps, which `Main` does not accept |
 
 Last searched for similar projects on 2026-11-27.
 

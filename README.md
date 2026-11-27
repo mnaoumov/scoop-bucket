@@ -1,6 +1,6 @@
 # mnaoumov's Scoop Bucket
 
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/mnaoumov)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/mnaoumov) [![CI](https://img.shields.io/github/actions/workflow/status/mnaoumov/scoop-bucket/ci.yml?branch=main&label=CI)](https://github.com/mnaoumov/scoop-bucket/actions/workflows/ci.yml) [![License](https://img.shields.io/github/license/mnaoumov/scoop-bucket)](https://github.com/mnaoumov/scoop-bucket/blob/main/LICENSE)
 
 Personal [Scoop](https://scoop.sh/) bucket for apps not available in the official buckets, or not in the release channel this bucket carries.
 
@@ -79,3 +79,7 @@ Last searched for similar projects on 2026-11-27.
 Open issues through the [issue forms](https://github.com/mnaoumov/scoop-bucket/issues/new/choose), not as blank issues.
 
 Filing from the CLI or the API (`gh issue create --body`, or an AI agent filing for you) skips the form, and `gh issue create --template` cannot load an issue form. In that case, open the matching form in [`.github/ISSUE_TEMPLATE/`](https://github.com/mnaoumov/scoop-bucket/tree/HEAD/.github/ISSUE_TEMPLATE), copy every field as a `### <label>` heading in the form's order, and fill in each one. Always state the version you used and your operating system.
+
+## License
+
+[MIT](LICENSE) © [Michael Naumov](https://github.com/mnaoumov/). The `bin/` scripts and the CI and pull request workflows are copied from [`ScoopInstaller/BucketTemplate`](https://github.com/ScoopInstaller/BucketTemplate), released under the [Unlicense](https://unlicense.org/).

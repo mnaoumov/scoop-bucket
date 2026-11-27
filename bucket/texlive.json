@@ -28,9 +28,7 @@
             "$env:TEXLIVE_INSTALL_ENV_NOCHECK=''"
         ]
     },
-    "env_add_path": [
-        "bin\\windows"
-    ],
+    "env_add_path": "bin\\windows",
     "shortcuts": [
         [
             "tl-tray-menu.exe",

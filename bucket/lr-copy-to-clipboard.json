@@ -5,7 +5,6 @@
     "license": "Freeware",
     "url": "https://lrcopytoclipboard.com/lr-copy-to-clipboard.lrplugin.1.0.1.zip",
     "hash": "76b12100e5084079b6fe5d38a4dfd8e6c513f93bbe517af225aec0f44bbedd85",
-    "bin": [],
     "installer": {
         "script": [
             "Write-Host 'Plugin installed to:' $dir",

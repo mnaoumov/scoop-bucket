@@ -4,7 +4,6 @@
     "homepage": "http://lightroomsolutions.com/plug-ins/jb-video-metadata/",
     "license": "Freeware",
     "url": "http://lightroomsolutions.com/wp/wp-content/uploads/2025/03/jb_videometadata.lrplugin.zip",
-    "bin": [],
     "installer": {
         "script": [
             "Write-Host 'Plugin installed to:' $dir",
